@@ -10,7 +10,7 @@ black = "*"
 flask = "*"
 confluent-kafka = "*"
 kafka = "*"
-uwsgi = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
