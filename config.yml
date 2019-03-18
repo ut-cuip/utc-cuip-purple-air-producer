@@ -7,22 +7,22 @@ kafka:
 sensors:
   - topic: MLK_PEEPLES_AIR_QUALITY
     mac: 84:f3:eb:91:44:38
-    location: mlk-peeples
+    nicename: mlk-peeples
   - topic: MLK_CENTRAL_AIR_QUALITY
     mac: 84:f3:eb:44:d8:24
-    location: mlk-central
+    nicename: mlk-central
   - topic: MLK_DOUGLAS_AIR_QUALITY
     mac: 84:f3:eb:91:44:60
-    location: mlk-douglas
+    nicename: mlk-douglas
   - topic: MLK_MAGNOLIA_AIR_QUALITY
     mac: 84:f3:eb:45:1a:53
-    location: mlk-magnolia
+    nicename: mlk-magnolia
   - topic: MLK_GEORGIA_AIR_QUALITY
     mac: 84:f3:eb:45:1a:66
-    location: mlk-georgia
+    nicename: mlk-georgia
   - topic: MLK_LINDSAY_AIR_QUALITY
     mac: 84:f3:eb:45:31:54
-    location: mlk-lindsay
+    nicename: mlk-lindsay
   - topic: MLK_HOUSTON_AIR_QUALITY
     mac: 84:f3:eb:45:23:4c
-    location: mlk-houston
+    nicename: mlk-houston
