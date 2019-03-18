@@ -3,17 +3,15 @@ import json
 from kafka import KafkaProducer
 import configparser
 from datetime import datetime
+import yaml
 
 app = Flask(__name__)
-config = configparser.ConfigParser()
-config.read("config.ini")
-producer = KafkaProducer(bootstrap_servers=config["KAFKA"]["bootstrap_servers"])
+with open("config.yml", "r") as f:
+    config = yaml.load(f.read(), Loader=yaml.FullLoader)
+
+producer = KafkaProducer(bootstrap_servers=config["kafka"]["bootstrap_servers"])
 sensors = []
-for key, value in config.items():
-    if "MLK_" in key:
-        sensors.append(value)
-mac_topic_map = {value["mac"]: value["topic"] for value in sensors}
-print(mac_topic_map)
+mac_topic_map = {value["mac"]: value["topic"] for value in config["sensors"]}
 
 
 def format_location(reading):
@@ -41,6 +39,7 @@ def foo():
     except Exception as e:
         pass
     return ("", 200)
+
 
 @app.route("/check", methods=["GET"])
 def check_status():

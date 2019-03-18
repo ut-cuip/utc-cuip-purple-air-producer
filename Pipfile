@@ -5,12 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 black = "*"
+pylint = "*"
 
 [packages]
 flask = "*"
 confluent-kafka = "*"
 kafka = "*"
 gunicorn = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.6"
