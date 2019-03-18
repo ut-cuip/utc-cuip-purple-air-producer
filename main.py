@@ -9,7 +9,7 @@ app = Flask(__name__)
 with open("config.yml", "r") as f:
     config = yaml.load(f.read(), Loader=yaml.FullLoader)
 
-producer = KafkaProducer(config["kafka"])
+producer = KafkaProducer(bootstrap_servers=config["kafka"]["bootstrap_servers"])
 sensors = []
 mac_topic_map = {value["mac"]: value["topic"] for value in config["sensors"]}
 
